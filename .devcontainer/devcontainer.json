@@ -1,0 +1,54 @@
+{
+    "name": "Azure Developer CLI",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "IMAGE": "dotnet",
+            "VERSION": "7.0",
+            "VARIANT": "bullseye"
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+            "version": "latest",
+            "helm": "latest",
+            "minikube": "none"
+        },
+        "ghcr.io/devcontainers/features/powershell:1.1.0": {},
+        "ghcr.io/devcontainers/features/azure-cli:1.0.8": {},
+        "ghcr.io/devcontainers/features/github-cli:1.0.10": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.azure-dev",
+                "ms-azuretools.vscode-bicep",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.vscode-node-azure-pack",
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.vscode-dotnet-runtime",
+                "ms-azuretools.vscode-azurefunctions",
+                "ms-azuretools.vscode-cosmosdb",
+                "ms-azuretools.vscode-azurestorage",
+                "ms-vscode.azurecli",
+                "ms-kubernetes-tools.vscode-aks-tools",
+                "ms-kubernetes-tools.aks-devx-tools",
+                "ms-azuretools.vscode-azurecontainerapps",
+                "ms-azuretools.vscode-azureeventgrid",
+                "ms-kubernetes-tools.vscode-kubernetes-tools",
+                "ipedrazas.kubernetes-snippets",
+                "redhat.vscode-yaml",
+                "GitHub.vscode-github-actions"
+            ]
+        }
+    },
+    "forwardPorts": [
+        5000
+    ],
+    "postCreateCommand": "",
+    "remoteUser": "vscode",
+    "hostRequirements": {
+        "memory": "8gb"
+    }
+}
