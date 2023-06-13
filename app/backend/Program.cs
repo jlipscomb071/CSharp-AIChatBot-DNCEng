@@ -2,7 +2,11 @@
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.ConfigureAzureKeyVault();
+// builder.Configuration.ConfigureAzureKeyVault();
+
+string? azureKeyVaultEndpoint = builder.Configuration["AzureKeyVaultEndpoint"];
+ArgumentNullException.ThrowIfNull(azureKeyVaultEndpoint);
+builder.Configuration.AddAzureKeyVault(new Uri(azureKeyVaultEndpoint), new DefaultAzureCredential());
 
 // See: https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

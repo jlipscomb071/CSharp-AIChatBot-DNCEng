@@ -18,7 +18,7 @@ internal sealed class ReadRetrieveReadApproachService : IApproachBasedService
         """;
 
     private const string Prefix = """
-        You are an intelligent assistant helping .NET Engineering customers with their documentation-related questions.
+        You are an intelligent assistant helping .NET Engineering Services customers with their documentation-related questions.
         Use 'you' to refer to the individual asking the questions even if they ask with 'I'.
         Answer the following question using only the data provided in the sources below.
         For tabular information return it as an HTML table. Do not return markdown format.

@@ -8,7 +8,7 @@ internal static class KeyVaultConfigurationBuilderExtensions
     {
         var azureKeyVaultEndpoint = Environment.GetEnvironmentVariable("AZURE_KEY_VAULT_ENDPOINT");
         ArgumentNullException.ThrowIfNullOrEmpty(azureKeyVaultEndpoint);
-
+        
         builder.AddAzureKeyVault(
             new Uri(azureKeyVaultEndpoint), new DefaultAzureCredential());
 
