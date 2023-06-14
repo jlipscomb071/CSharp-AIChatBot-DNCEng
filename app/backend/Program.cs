@@ -2,7 +2,6 @@
 
 var builder = WebApplication.CreateBuilder(args);
 
-// builder.Configuration.ConfigureAzureKeyVault();
 
 string? azureKeyVaultEndpoint = builder.Configuration["AzureKeyVaultEndpoint"];
 ArgumentNullException.ThrowIfNull(azureKeyVaultEndpoint);
@@ -30,7 +29,7 @@ else
         var key = builder.Configuration["AzureRedisCachePrimaryKey"];
 		var ssl = "true";
 
-        string? GetEnvVar(string key) =>
+        static string? GetEnvVar(string key) =>
             Environment.GetEnvironmentVariable(key);
 
 		if (GetEnvVar("REDIS_HOST") is string redisHost)
